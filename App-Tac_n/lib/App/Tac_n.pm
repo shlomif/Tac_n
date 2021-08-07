@@ -28,7 +28,16 @@ App::Tac_n - tac with line numbers
 
 =head1 SYNOPSIS
 
+    ~/progs/perl/cpan/App/Tac_n/App-Tac_n/ seq 1 5 | perl -Ilib bin/tac-n
+             5  1
+             4  2
+             3  3
+             2  4
+             1  5
+
 =head1 DESCRIPTION
+
+Same as C<< tac | cat -n | tac >>.
 
 =head1 METHODS
 
