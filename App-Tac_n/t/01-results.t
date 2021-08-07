@@ -2,6 +2,8 @@
 
 use strict;
 use warnings;
+use autodie;
+use 5.014;
 
 use Test::More tests => 1;
 
@@ -17,11 +19,25 @@ sub test_tac
 
     my @files = @{ $args->{files} };
     my @flags = @{ $args->{flags} };
+    my $blurb = $args->{blurb};
 
     # die "@flags @files";
     my $re = _lines2re( @{ $args->{lines} } );
-    return like( scalar(`$^X -Ilib bin/tac-n @flags @files`),
-        qr#\A$re\z#ms, $args->{blurb} );
+    subtest "tac-n $blurb" => sub {
+        plan tests => 2;
+
+        like( scalar(`$^X -Ilib bin/tac-n @flags @files`),
+            qr#\A$re\z#ms, $args->{blurb} );
+
+        like(
+            scalar(
+                `$^X -Ilib -E "use App::Tac_n; App::Tac_n->run()" @flags @files`
+            ),
+            qr#\A$re\z#ms,
+            $args->{blurb}
+        );
+    };
+    return;
 }
 
 # TEST
