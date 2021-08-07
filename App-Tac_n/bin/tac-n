@@ -12,10 +12,5 @@ use warnings;
 use 5.014;
 use autodie;
 
-my @l = <ARGV>;
-my $p = 1 + @l;
-
-foreach my $v (@l)
-{
-    printf "%10d  %s", ( --$p ), $v;
-}
+use App::Tac_n ();
+App::Tac_n->run();
