@@ -45,7 +45,10 @@ Same as C<< tac | cat -n | tac >>.
 
 Runs the CLI app.
 
-=head2
+=head1 THANKS
+
+Some of the code and data for tests are based on earlier ones written by
+me for L<PerlPowerTools|https://metacpan.org/dist/PerlPowerTools> .
 
 =cut
 
