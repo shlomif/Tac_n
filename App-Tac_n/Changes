@@ -1,5 +1,8 @@
 Revision history for App-Tac_n
 
+0.0.3       2021-09-05
+    - Add an example to the documentation and other documentation enhancements.
+
 0.0.2       2021-08-13
     - Add a Thanks section to the POD.
 
