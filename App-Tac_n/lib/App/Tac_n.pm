@@ -14,6 +14,8 @@ sub run
     {
         printf "%10d  %s", ( --$p ), $v;
     }
+
+    return;
 }
 
 1;
